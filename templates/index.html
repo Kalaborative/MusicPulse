@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spotipyproj</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet prefetch" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+	<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/jvectormap/2.0.4/jquery-jvectormap.min.css">
+	<link rel="stylesheet" type="text/css" href="static/css/search.css">
+	<link rel="stylesheet" type="text/css" href="static/css/dash.css">
+</head>
+<body>
+	<section>
+	<header>
+		<nav class="rad-navigation">
+			<div class="rad-logo-container rad-nav-min">
+				<a href="#" class="rad-logo"><i class=" fa fa-music"></i> </a>
+				<a href="#" class="rad-toggle-btn pull-right"><i class="fa fa-bars"></i></a>
+			</div>
+			<a href="#" class="rad-logo-hidden">MusicPulse</a>
+			<div class="rad-top-nav-container">
+				<a href="" class="brand-icon"><i class="fa fa-music"></i></a>
+			</div>
+		</nav>
+	</header>
+</section>
+<aside>
+	<nav class="rad-sidebar rad-nav-min">
+		<ul>
+			<li>
+				<a href="#" class="inbox">
+					<i class="fa fa-dashboard"><span class="icon-bg rad-bg-success"></span></i>
+					<span class="rad-sidebar-item">Dashboard</span>
+				</a>
+			</li>
+			<!--<li>
+				<<a href="#">
+					<i class="fa fa-bar-chart-o">
+						<span class="icon-bg rad-bg-danger"></span>
+					</i>
+					<span class="rad-sidebar-item">Ticket status</span>
+				</a>
+			</li>
+			<li><a href="#" class="snooz"><i class="fa fa-line-chart"><span class="icon-bg rad-bg-primary"></span></i><span class="rad-sidebar-item">Call trends</span></a></li>
+			<li><a href="#" class="done"><i class="fa fa-area-chart"><span class="icon-bg rad-bg-warning"></span></i><span class="rad-sidebar-item">Heat maps</span></a></li>
+			<li>
+				<a href="#">
+					<i class="fa fa-wrench"><span class="icon-bg rad-bg-violet"></span></i>
+					<span class="rad-sidebar-item">Settings</span>
+				</a>
+			</li>-->
+		</ul>
+	</nav>
+</aside>
+<main>
+	<section>
+		<div class="rad-body-wrapper rad-nav-min">
+			<div class="container-fluid">
+					<form action="/" method="post" id="myForm">
+  						<input type="text" placeholder="Type an artist..." name="qArtist">
+	  					<button type="submit" class="submitbtn">Go!</button>
+					</form>
+				<header class="rad-page-title">
+       			</header>
+				<div class="row">
+				{% if res %}
+					{% for r in res %}
+					<div class="col-lg-3 col-xs-6">
+						<div class="rad-info-box rad-txt-success">
+							<img src={{r[2]}} width="100" height="100">
+							<span class="heading">{{r[1]}}</span>
+							<span class="value"><span>{{r[0]}}</span></span>							
+						</div>
+					</div>
+					{% endfor %}
+				{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+</main>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.3/jquery.slimscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.8.0/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script type="text/javascript" src="static/js/board.js"></script>
+</body>
+</html>
